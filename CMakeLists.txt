@@ -60,7 +60,7 @@ target_include_directories( Ogre_glTF PUBLIC
 	./thirdParty/tinygltf/
 )
 
-message("OGRE_LIBRARIES ---> debug louis ${OGRE_LIBRARIES} in dirs ?? ${OGRE_BINARIES}")
+message("OGRE_LIBRARIES -> lookup ${OGRE_LIBRARIES} in directory ${OGRE_BINARIES}")
 
 target_link_libraries(Ogre_glTF
   -L${OGRE_BINARIES}
