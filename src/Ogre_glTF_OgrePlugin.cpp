@@ -24,7 +24,8 @@ void Ogre_glTF_EXPORT dllStartPlugin(void)
 	}
 
 	gPluginInstaller = new Ogre_glTF::glTFLoaderPlugin;
-	Ogre::Root::getSingleton().installPlugin(gPluginInstaller);
+	auto pluginOptions = new Ogre::NameValuePairList();
+	Ogre::Root::getSingleton().installPlugin(gPluginInstaller, pluginOptions);
 }
 
 void Ogre_glTF_EXPORT dllStopPlugin(void)
@@ -41,7 +42,7 @@ Ogre_glTF::glTFLoaderPlugin::~glTFLoaderPlugin() = default;
 
 const Ogre::String& Ogre_glTF::glTFLoaderPlugin::getName() const { return name; }
 
-void Ogre_glTF::glTFLoaderPlugin::install() {}
+void Ogre_glTF::glTFLoaderPlugin::install(const NameValuePairList *options) {}
 
 void Ogre_glTF::glTFLoaderPlugin::initialise() { gltf = std::make_unique<Ogre_glTF::glTFLoader>(); }
 

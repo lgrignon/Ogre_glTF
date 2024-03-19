@@ -6,6 +6,8 @@
 #include <OgrePlugin.h>
 #include <memory>
 
+using Ogre::NameValuePairList;
+
 namespace Ogre_glTF
 {
 	///Interface callable from plugin users without linking the DLL
@@ -44,7 +46,7 @@ namespace Ogre_glTF
 		glTFLoaderPlugin();
 		virtual ~glTFLoaderPlugin();
 		const Ogre::String& getName() const override;
-		void install() override;
+		void install(const NameValuePairList *options) override;
 		void initialise() override;
 		void shutdown() override;
 		void uninstall() override;

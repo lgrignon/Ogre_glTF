@@ -60,7 +60,12 @@ target_include_directories( Ogre_glTF PUBLIC
 	./thirdParty/tinygltf/
 )
 
+message("OGRE_LIBRARIES ---> debug louis ${OGRE_LIBRARIES} in dirs ?? ${OGRE_BINARIES}")
+
 target_link_libraries(Ogre_glTF
+  -L${OGRE_BINARIES}
+  -L${OGRE_BINARIES}/lib/macosx/Debug 
+  -L${OGRE_BINARIES}/lib/macosx/${CMAKE_BUILD_TYPE} 
 	${OGRE_LIBRARIES}
 	${OGRE_HlmsPbs_LIBRARIES}
 )
